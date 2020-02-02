@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react';
 
-const insertStyleSheetRule = (ruleText: string, duration: number): void => {
+const insertStyleSheetRule = (ruleText: string): void => {
     const sheets = document.styleSheets;
 
     if (sheets.length === 0) {
@@ -11,31 +11,26 @@ const insertStyleSheetRule = (ruleText: string, duration: number): void => {
 
     const sheet = sheets[sheets.length - 1];
     // @ts-ignore
-    const index = sheet.insertRule(
+    sheet.insertRule(
         ruleText,
         // @ts-ignore
         sheet.rules ? sheet.rules.length : sheet.cssRules.length
     );
-
-    setTimeout(() => {
-        // @ts-ignore
-        sheet.deleteRule(index);
-    }, duration + 200);
 };
 
-const makeAnimation = (color: string, duration: number): string => {
+const makeAnimation = (color: string): string => {
     const random =
         'use-color-change' + String(Math.random()).replace(/\./g, '');
     const animation = `@keyframes ${random} { from {color: ${color};} to {} }`;
-    insertStyleSheetRule(animation, duration);
+    insertStyleSheetRule(animation);
     return random;
 };
 
 const useColorChange = (
     value: number,
     options: {
-        higher: string;
-        lower: string;
+        higher: string | null;
+        lower: string | null;
         duration?: number;
     }
 ): {animation?: string} => {
@@ -46,9 +41,9 @@ const useColorChange = (
 
     useEffect(() => {
         if (value > val && options.higher) {
-            setAnimation(makeAnimation(options.higher, duration));
+            setAnimation(makeAnimation(options.higher));
         } else if (value < val && options.lower) {
-            setAnimation(makeAnimation(options.lower, duration));
+            setAnimation(makeAnimation(options.lower));
         }
         setVal(value);
         // eslint-disable-next-line react-hooks/exhaustive-deps
