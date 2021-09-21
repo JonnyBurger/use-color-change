@@ -12,16 +12,15 @@ const insertStyleSheetRule = (ruleText: string): void => {
     }
 
     const sheet = sheets[sheets.length - 1];
-    // @ts-ignore
     sheet.insertRule(
         ruleText,
-        // @ts-ignore
         sheet.rules ? sheet.rules.length : sheet.cssRules.length
     );
 };
 
 const makeAnimation = (color: string, property: ChangeableProperty): string => {
-    const random = 'use-color-change' + String(Math.random()).replace(/\./g, '');
+    const random =
+        'use-color-change' + String(Math.random()).replace(/\./g, '');
     const animation = `@keyframes ${random} { from {${property}: ${color};} to {} }`;
     insertStyleSheetRule(animation);
     return random;

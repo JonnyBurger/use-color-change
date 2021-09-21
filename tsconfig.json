@@ -1,13 +1,14 @@
 {
-  "compilerOptions": {
-    "target": "es5",                          
-    "module": "commonjs",                     
-    "strict": true,                          
-    "esModuleInterop": true,                  
-    "forceConsistentCasingInFileNames": true,
-    "rootDir": "src",
-    "outDir": "dist",
-    "declaration": true,
-    "declarationMap": true
-  }
+    "compilerOptions": {
+        "target": "es5",
+        "lib": ["ES2015"],
+        "module": "commonjs",
+        "strict": true,
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "rootDir": "src",
+        "outDir": "dist",
+        "declaration": true,
+        "declarationMap": true
+    }
 }

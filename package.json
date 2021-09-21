@@ -1,41 +1,42 @@
 {
-  "name": "use-color-change",
-  "version": "1.0.0",
-  "description": "Flash text in color when the text changes",
-  "main": "dist/index.js",
-  "scripts": {
-    "prepare": "tsc",
-    "test": "eslint src/*.ts --ignore-path .gitignore"
-  },
-  "files": [
-    "readme.md",
-    "dist"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/JonnyBurger/use-color-change.git"
-  },
-  "keywords": [
-    "color",
-    "change",
-    "css",
-    "transition",
-    "react",
-    "hooks"
-  ],
-  "author": "Jonny Burger",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/JonnyBurger/use-color-change/issues"
-  },
-  "homepage": "https://github.com/JonnyBurger/use-color-change#readme",
-  "devDependencies": {
-    "@jonny/eslint-config": "^2.1.66",
-    "@types/react": "^16.9.19",
-    "eslint": "^6.8.0",
-    "typescript": "^3.7.5"
-  },
-  "peerDependencies": {
-    "react": "*"
-  }
+    "name": "use-color-change",
+    "version": "1.0.0",
+    "description": "Flash text in color when the text changes",
+    "main": "dist/index.js",
+    "scripts": {
+        "prepare": "tsc",
+        "test": "eslint src/*.ts --ignore-path .gitignore"
+    },
+    "files": [
+        "readme.md",
+        "dist"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/JonnyBurger/use-color-change.git"
+    },
+    "keywords": [
+        "color",
+        "change",
+        "css",
+        "transition",
+        "react",
+        "hooks"
+    ],
+    "author": "Jonny Burger",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/JonnyBurger/use-color-change/issues"
+    },
+    "homepage": "https://github.com/JonnyBurger/use-color-change#readme",
+    "devDependencies": {
+        "@jonny/eslint-config": "^2.1.66",
+        "@types/react": "^16.9.19",
+        "@types/web": "^0.0.36",
+        "eslint": "^6.8.0",
+        "typescript": "^4.4.3"
+    },
+    "peerDependencies": {
+        "react": "*"
+    }
 }
