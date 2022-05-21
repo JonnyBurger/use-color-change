@@ -1,6 +1,6 @@
 {
     "name": "use-color-change",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "Flash text in color when the text changes",
     "main": "dist/index.js",
     "scripts": {
