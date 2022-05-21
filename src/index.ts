@@ -2,17 +2,19 @@ import {useState, useEffect} from 'react';
 
 type ChangeableProperty = 'color' | 'background-color';
 
-const insertStyleSheetRule = (ruleText: string): void => {
-    const sheets = document.styleSheets;
+const USE_COLOR_CHANGE_ID = '__use_color_change';
 
-    if (sheets.length === 0) {
-        const style = document.createElement('style');
-        style.appendChild(document.createTextNode(''));
-        document.head.appendChild(style);
+const insertStyleSheetRule = (ruleText: string): void => {
+    let style = document.getElementById(USE_COLOR_CHANGE_ID) as HTMLStyleElement | null
+    if (style == null) {
+      style = document.createElement('style');
+      style.setAttribute('id', USE_COLOR_CHANGE_ID)
+      style.appendChild(document.createTextNode(''));
+      document.head.appendChild(style);
     }
 
-    const sheet = sheets[sheets.length - 1];
-    sheet.insertRule(
+    const { sheet } = style;
+    sheet?.insertRule(
         ruleText,
         sheet.rules ? sheet.rules.length : sheet.cssRules.length
     );
